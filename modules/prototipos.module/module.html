@@ -1,0 +1,19 @@
+<div class="prototipos-grid">
+  {% for item in module.items %}
+  {% set img_src = item.prototipo_imagen.src if item.prototipo_imagen.src else get_asset_url("../../images/large-placeholder-image.png") %}
+  <div class="prototipos-grid__card">
+    <img
+      class="prototipos-grid__img"
+      src="{{ img_src }}"
+      alt="{{ item.prototipo_imagen.alt | escape_attr }}"
+      loading="{{ item.prototipo_imagen.loading | default('lazy') }}"
+    >
+    <div class="prototipos-grid__overlay"></div>
+    <div class="prototipos-grid__content">
+      <h3 class="prototipos-grid__nombre">{{ item.prototipo_nombre | escape_html }}</h3>
+      <p class="prototipos-grid__m2">({{ item.prototipo_m2 | escape_html }})</p>
+      <p class="prototipos-grid__desc">{{ item.prototipo_desc | escape_html }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>

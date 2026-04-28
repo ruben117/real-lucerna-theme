@@ -1,0 +1,141 @@
+{# ── Image Slider – Real Lucerna ──────────────────────────
+   Slide activo centrado y más grande.
+   Inactivos visibles en laterales con overlay blanco.
+   Click en activo → lightbox.
+   Click en inactivo → navegar a ese slide.
+   Flechas abajo, centradas.
+#}
+{% set slide_count      = module.slides | length %}
+{% set slide_w          = module.settings.slide_width     | default(52) %}
+{% set inactive_scale   = module.settings.inactive_scale  | default(88) %}
+{% set inactive_overlay = module.settings.inactive_overlay | default(45) %}
+{% set gap              = module.settings.gap             | default(20) %}
+{% set ratio            = module.settings.aspect_ratio    | default("4/3") %}
+{% set radius           = module.settings.border_radius   | default(12) %}
+{% set arrow_size       = module.settings.arrow_size      | default(44) %}
+{% set has_lightbox     = module.lightbox | default(true) %}
+{% set start_index      = module.start_index | default(0) %}
+
+<div
+  class="img-slider"
+  data-img-slider
+  data-loop="{{ 'true' if module.loop else 'false' }}"
+  data-autoplay="{{ 'true' if module.autoplay else 'false' }}"
+  data-autoplay-delay="{{ module.autoplay_delay | default(4000) }}"
+  data-slide-count="{{ slide_count }}"
+  data-lightbox="{{ 'true' if has_lightbox else 'false' }}"
+  data-start-index="{{ start_index }}"
+  style="
+    --img-slide-w: {{ slide_w }}%;
+    --img-inactive-scale: {{ inactive_scale / 100 }};
+    --img-inactive-overlay: {{ inactive_overlay / 100 }};
+    --img-gap: {{ gap }}px;
+    --img-radius: {{ radius }}px;
+    --img-ratio: {{ ratio }};
+    --img-arrow-size: {{ arrow_size }}px;
+  "
+>
+
+  {# ── Viewport ────────────────────────────────────────── #}
+  <div class="img-slider__viewport">
+    <div class="img-slider__track" data-img-slider-track>
+
+      {% for slide in module.slides %}
+        {% set img_src = slide.image.src if slide.image.src else "" %}
+        <div
+          class="img-slider__slide{% if loop.index0 == start_index %} is-active{% endif %}"
+          data-img-slide="{{ loop.index0 }}"
+        >
+          <div class="img-slider__img-wrap">
+            {# Overlay blanco para slides inactivos #}
+            <div class="img-slider__overlay" aria-hidden="true"></div>
+            <img
+              class="img-slider__img"
+              src="{{ img_src | escape_url }}"
+              alt="{{ slide.image.alt | escape_attr or slide.caption | escape_attr or '' }}"
+              loading="{{ 'eager' if loop.first else 'lazy' }}"
+            >
+            {# Icono de lupa en slide activo #}
+            {% if has_lightbox %}
+              <div class="img-slider__zoom-hint" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+            {% endif %}
+          </div>
+          {% if slide.caption %}
+            <p class="img-slider__caption">{{ slide.caption | escape_html }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+  {# ── Navegación ──────────────────────────────────────── #}
+  {% if slide_count > 1 %}
+    <div class="img-slider__nav">
+      <button
+        class="img-slider__arrow img-slider__arrow--prev"
+        data-img-prev
+        aria-label="Imagen anterior"
+        type="button"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button
+        class="img-slider__arrow img-slider__arrow--next"
+        data-img-next
+        aria-label="Imagen siguiente"
+        type="button"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  {% endif %}
+
+  {# ── Lightbox ────────────────────────────────────────── #}
+  {% if has_lightbox %}
+    <div
+      class="img-slider__lightbox"
+      data-img-lightbox
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Vista ampliada"
+    >
+      <div class="img-slider__lightbox-backdrop" data-img-lightbox-close></div>
+      <div class="img-slider__lightbox-content">
+        <button
+          class="img-slider__lightbox-close"
+          data-img-lightbox-close
+          aria-label="Cerrar"
+          type="button"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <img class="img-slider__lightbox-img" data-img-lightbox-img src="" alt="">
+      </div>
+    </div>
+  {% endif %}
+
+</div>

@@ -1,0 +1,143 @@
+[
+  {
+    "id": "slides",
+    "name": "slides",
+    "label": "Imágenes",
+    "type": "group",
+    "occurrence": { "min": 1, "max": 20, "default": 3 },
+    "children": [
+      {
+        "id": "image",
+        "name": "image",
+        "label": "Imagen",
+        "type": "image",
+        "required": true,
+        "default": { "alt": "", "loading": "lazy" }
+      },
+      {
+        "id": "caption",
+        "name": "caption",
+        "label": "Pie de imagen (opcional)",
+        "type": "text",
+        "default": ""
+      }
+    ]
+  },
+  {
+    "id": "loop",
+    "name": "loop",
+    "label": "Bucle infinito",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "autoplay",
+    "name": "autoplay",
+    "label": "Reproducción automática",
+    "type": "boolean",
+    "default": false
+  },
+  {
+    "id": "autoplay_delay",
+    "name": "autoplay_delay",
+    "label": "Intervalo de autoplay (ms)",
+    "type": "number",
+    "default": 4000,
+    "min": 1000,
+    "max": 10000
+  },
+  {
+    "id": "lightbox",
+    "name": "lightbox",
+    "label": "Abrir imagen en popup al hacer clic",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "start_index",
+    "name": "start_index",
+    "label": "Slide inicial (0 = primero, 1 = segundo…)",
+    "type": "number",
+    "default": 0,
+    "min": 0,
+    "max": 19
+  },
+  {
+    "id": "settings",
+    "name": "settings",
+    "label": "Opciones visuales",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "id": "slide_width",
+        "name": "slide_width",
+        "label": "Ancho del slide activo (%)",
+        "type": "number",
+        "default": 52,
+        "min": 30,
+        "max": 90
+      },
+      {
+        "id": "inactive_scale",
+        "name": "inactive_scale",
+        "label": "Escala vertical de slides inactivos (%)",
+        "type": "number",
+        "default": 88,
+        "min": 50,
+        "max": 99
+      },
+      {
+        "id": "inactive_overlay",
+        "name": "inactive_overlay",
+        "label": "Opacidad del overlay blanco inactivo (%)",
+        "type": "number",
+        "default": 45,
+        "min": 0,
+        "max": 90
+      },
+      {
+        "id": "gap",
+        "name": "gap",
+        "label": "Separación entre slides (px)",
+        "type": "number",
+        "default": 20,
+        "min": 0,
+        "max": 64
+      },
+      {
+        "id": "aspect_ratio",
+        "name": "aspect_ratio",
+        "label": "Relación de aspecto",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["4/3",  "4:3 — Paisaje"],
+          ["16/9", "16:9 — Panorámico"],
+          ["3/2",  "3:2"],
+          ["1/1",  "1:1 — Cuadrado"],
+          ["3/4",  "3:4 — Retrato"]
+        ],
+        "default": "4/3"
+      },
+      {
+        "id": "border_radius",
+        "name": "border_radius",
+        "label": "Radio de bordes (px)",
+        "type": "number",
+        "default": 12,
+        "min": 0,
+        "max": 32
+      },
+      {
+        "id": "arrow_size",
+        "name": "arrow_size",
+        "label": "Tamaño de flechas (px)",
+        "type": "number",
+        "default": 44,
+        "min": 32,
+        "max": 72
+      }
+    ]
+  }
+]

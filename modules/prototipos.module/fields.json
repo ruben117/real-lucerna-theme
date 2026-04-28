@@ -1,0 +1,40 @@
+[
+  {
+    "id": "items",
+    "name": "items",
+    "label": "Prototipos",
+    "type": "group",
+    "repeater": true,
+    "occurrence": { "min": 1, "max": 8, "default": 4 },
+    "children": [
+      {
+        "id": "prototipo_imagen",
+        "name": "prototipo_imagen",
+        "label": "Imagen",
+        "type": "image",
+        "default": { "src": "", "alt": "", "loading": "lazy" }
+      },
+      {
+        "id": "prototipo_nombre",
+        "name": "prototipo_nombre",
+        "label": "Nombre del prototipo",
+        "type": "text",
+        "default": "Prototipo"
+      },
+      {
+        "id": "prototipo_m2",
+        "name": "prototipo_m2",
+        "label": "Metros cuadrados",
+        "type": "text",
+        "default": "00.00 m²"
+      },
+      {
+        "id": "prototipo_desc",
+        "name": "prototipo_desc",
+        "label": "Descripción",
+        "type": "text",
+        "default": ""
+      }
+    ]
+  }
+]

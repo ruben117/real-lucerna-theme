@@ -1,0 +1,78 @@
+/* ── Icon + Richtext – Real Lucerna ───────────────────────── */
+
+.icon-rt {
+  display: flex;
+  gap: var(--icon-rt-gap, 16px);
+}
+
+/* ── Posiciones ─────────────────────────────────────────── */
+
+.icon-rt--left {
+  align-items: var(--icon-rt-valign, flex-start);
+  flex-direction: row;
+}
+
+.icon-rt--right {
+  align-items: var(--icon-rt-valign, flex-start);
+  flex-direction: row-reverse;
+}
+
+.icon-rt--top {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.icon-rt--bottom {
+  align-items: flex-start;
+  flex-direction: column-reverse;
+}
+
+/* ── Ícono ──────────────────────────────────────────────── */
+
+.icon-rt__icon-wrap {
+  background-color: var(--primary-color);
+  padding: 9px;
+  border-radius: 0px;
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.icon-rt__icon {
+  display: block;
+  height: var(--icon-rt-size, 32px);
+  object-fit: contain;
+  width: var(--icon-rt-size, 32px);
+}
+
+/* ── Contenido ──────────────────────────────────────────── */
+
+.icon-rt__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.icon-rt__content > *:first-child { margin-top: 0; }
+.icon-rt__content > *:last-child  { margin-bottom: 0; }
+
+/* Primera línea: título destacado */
+.icon-rt__content .icon-rt__title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0px 0px 5px;
+}
+
+.icon-rt__content .icon-rt__title strong {
+  color: var(--primary-color);
+}
+
+/* Segunda línea: descripción */
+.icon-rt__content .icon-rt__desc {
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}

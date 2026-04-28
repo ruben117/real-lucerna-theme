@@ -1,0 +1,62 @@
+/* ============================================================
+   SECCIÓN: PROTOTIPOS
+   ============================================================ */
+
+.prototipos__disclaimer-module p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: var(--font-size-disclaimer);
+  text-align: center;
+  margin: 1.5rem 0 2.5rem;
+}
+
+/* ── CTA row ─────────────────────────────────────────────── */
+
+.prototipos__cta-heading h2 {
+  color: #ffffff;
+  font-size: clamp(24px, 2.2vw, 38px);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.prototipos__cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.prototipos__cta-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Botón primario con color secundario (amarillo) en esta sección */
+.prototipos__cta-actions .btn-primary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--primary-color-black) !important;
+}
+
+.prototipos__cta-actions .btn-primary:hover,
+.prototipos__cta-actions .btn-primary:focus {
+  background-color: #b8bc20;
+  border-color: #b8bc20;
+  color: var(--primary-color-black) !important;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .prototipos__cta-actions {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+  }
+
+  .prototipos__cta-actions a {
+    width: 100%;
+    text-align: center;
+  }
+}

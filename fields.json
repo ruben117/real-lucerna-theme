@@ -67,7 +67,7 @@
         },
         "default": {
           "fallback": "sans-serif",
-          "font": "Lato",
+          "font": "Barlow",
           "font_set": "GOOGLE"
         }
       },
@@ -89,7 +89,7 @@
         },
         "default": {
           "fallback": "serif",
-          "font": "Merriweather",
+          "font": "Barlow",
           "font_set": "GOOGLE"
         }
       }
@@ -108,7 +108,7 @@
         "max": 500,
         "min": 0,
         "suffix": "px",
-        "default": 80
+        "default": 60
       },
       {
         "label": "Maximum content width",
@@ -145,7 +145,7 @@
               }
             },
             "default": {
-              "size": 50,
+              "size": 40,
               "size_unit": "px",
               "styles": {
                 "text-decoration": "none"

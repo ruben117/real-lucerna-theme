@@ -1,0 +1,125 @@
+/* ============================================================
+   HERO SECTION – Real Lucerna
+   Altura 100vh, imagen de fondo, overlay gradiente desde izquierda
+   ============================================================ */
+
+/* ── Sección: altura de viewport completo ────────────────── */
+
+.dnd-section:has(.hero__eyebrow-module) {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── Overlay oscuro de izquierda a derecha ───────────────── */
+
+.dnd-section:has(.hero__eyebrow-module)::before {
+  background: linear-gradient(
+    to right,
+    rgba(33, 55, 100, 0.82) 0%,
+    rgba(33, 55, 100, 0.60) 45%,
+    rgba(33, 55, 100, 0.10) 75%,
+    transparent 100%
+  );
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+/* El row-fluid queda sobre el overlay */
+.dnd-section:has(.hero__eyebrow-module) > .row-fluid {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Columna de contenido ────────────────────────────────── */
+
+.dnd-section:has(.hero__eyebrow-module) .dnd-column {
+  padding: 0;
+}
+
+/* ── Overline / Eyebrow ──────────────────────────────────── */
+
+.hero__eyebrow-module h3 {
+  color: #ffffff;
+  font-size: clamp(20px, 1.9vw, 33px);
+  font-weight: 200;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin: 0;
+}
+
+.hero__eyebrow-module h3 strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ── Título H1 ───────────────────────────────────────────── */
+
+.hero__title-module h1 {
+  color: #ffffff;
+  font-size: clamp(36px, 3.2vw, 64px);
+  font-weight: 100;
+  line-height: 1.1;
+  margin: 0px 0px 20px;
+}
+
+/* ── Descripción y CTAs ──────────────────────────────────── */
+
+.hero__body-module p {
+color: #ffffff;
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  max-width: 600px;
+}
+
+/* Contenedor de botones */
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Responsive – Mobile (≤ 767px) ──────────────────────── */
+
+@media (max-width: 767px) {
+  .dnd-section:has(.hero__eyebrow-module) {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100svh;
+  }
+
+  .dnd-section:has(.hero__eyebrow-module)::before {
+    background: rgba(33, 55, 100, 0.65);
+  }
+
+  .dnd-section:has(.hero__eyebrow-module) .dnd-column {
+    width: 100% !important;
+  }
+
+  .hero__title-module h1 {
+    font-size: 36px;
+  }
+
+  .hero__body-module p {
+    max-width: 100%;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero__ctas .btn-primary,
+  .hero__ctas .btn-outline {
+    text-align: center;
+    width: 100%;
+  }
+}

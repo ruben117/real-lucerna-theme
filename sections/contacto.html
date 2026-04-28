@@ -1,0 +1,107 @@
+<!--
+  templateType: section
+  label: Contacto – Real Lucerna
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/contacto.png
+  description: "Sección de contacto con imagen de fondo, heading + íconos y formulario con contenedor blanco."
+-->
+
+{% dnd_section
+  background_image={
+    "backgroundSize": "cover",
+    "backgroundPosition": "center center",
+    "imageUrl": get_asset_url("../images/bgk-contacto.jpg")
+  },
+  background_color="#33425D",
+  vertical_alignment="MIDDLE",
+  padding={
+    "default": { "top": 80, "bottom": 80 },
+    "mobile":  { "top": 50, "bottom": 50 }
+  }
+%}
+
+  {# ── Columna izquierda: heading + descripción + íconos ──── #}
+  {% dnd_column offset=0, width=5 %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/header",
+        label="Contacto – Título",
+        extra_classes="contacto__heading-module",
+        header_tag="h2",
+        value="Agenda tu cita y conoce tu casa en el corazón de Playa del Carmen."
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Contacto – Descripción",
+        extra_classes="contacto__desc-module",
+        html='<p>Las casas de Real Lucerna están ubicadas estratégicamente sobre la Av. Colosio ¡te conectamos con lo mejor de Playa del Carmen!</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-grid",
+        label="Contacto – Íconos",
+        extra_classes="contacto__iconos-module",
+        items=[
+          {
+            "icono_imagen": { "src": get_asset_url("../images/icon-contacto-telefono.png"), "alt": "Teléfono", "loading": "lazy" },
+            "icono_enlace": { "url": { "href": "tel:+529841234567", "type": "PHONE_NUMBER" }, "open_in_new_tab": false }
+          },
+          {
+            "icono_imagen": { "src": get_asset_url("../images/icon-contacto-whatsapp.png"), "alt": "WhatsApp", "loading": "lazy" },
+            "icono_enlace": { "url": { "href": "https://wa.me/529841234567", "type": "EXTERNAL" }, "open_in_new_tab": true }
+          },
+          {
+            "icono_imagen": { "src": get_asset_url("../images/icon-contacto-ubicacion.png"), "alt": "Ubicación", "loading": "lazy" },
+            "icono_enlace": { "url": { "href": "https://maps.google.com/?q=Real+Lucerna+Playa+del+Carmen", "type": "EXTERNAL" }, "open_in_new_tab": true }
+          }
+        ],
+        config={
+          "flex_direction": "row",
+          "flex_wrap": "wrap",
+          "justify_content": "flex-start",
+          "align_items": "center",
+          "icono_gap": 12,
+          "icono_size": 60,
+          "icono_padding": 14,
+          "icono_radius": 8,
+          "icono_bg": { "color": "#CBD527", "opacity": 100 }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+  {# ── Columna derecha: formulario ─────────────────────────── #}
+  {% dnd_column offset=5, width=7 %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Contacto – Eyebrow formulario",
+        extra_classes="contacto__form-eyebrow",
+        html='<p class="contacto__form-label">FORMULARIO DE CONTACTO</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/form",
+        label="Contacto – Formulario",
+        extra_classes="contacto__form-module"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

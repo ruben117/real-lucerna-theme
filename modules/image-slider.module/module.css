@@ -1,0 +1,252 @@
+/* ============================================================
+   IMAGE SLIDER – Real Lucerna
+   Centro activo grande · laterales con overlay blanco · lightbox
+   ============================================================ */
+
+.img-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* ── Viewport ───────────────────────────────────────────── */
+
+.img-slider__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ── Track ──────────────────────────────────────────────── */
+
+.img-slider__track {
+  align-items: center;
+  display: flex;
+  gap: var(--img-gap, 20px);
+  transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ── Slides ─────────────────────────────────────────────── */
+
+.img-slider__slide {
+  flex: 0 0 var(--img-slide-w, 52%);
+}
+
+/* ── Image wrap ─────────────────────────────────────────── */
+
+.img-slider__img-wrap {
+  aspect-ratio: var(--img-ratio, 4/3);
+  border-radius: var(--img-radius, 12px);
+  cursor: default;
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+/* Slide activo: tamaño completo, cursor pointer para lightbox */
+.img-slider__slide.is-active .img-slider__img-wrap {
+  cursor: pointer;
+  transform: scaleY(1);
+  transform-origin: center center;
+}
+
+/* Slide inactivo: escala vertical reducida */
+.img-slider__slide:not(.is-active) .img-slider__img-wrap {
+  transform: scaleY(var(--img-inactive-scale, 0.88));
+  transform-origin: center center;
+}
+
+/* ── Overlay blanco en inactivos ────────────────────────── */
+
+.img-slider__overlay {
+  border-radius: inherit;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.48s ease;
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+.img-slider__slide:not(.is-active) .img-slider__overlay {
+  opacity: var(--img-inactive-overlay, 0.45);
+}
+
+/* ── Imagen ─────────────────────────────────────────────── */
+
+.img-slider__img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  z-index: 1;
+}
+
+/* ── Icono zoom (hint) en activo ────────────────────────── */
+
+.img-slider__zoom-hint {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  bottom: 1rem;
+  color: var(--primary-color);
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  right: 1rem;
+  transition: opacity 0.2s ease;
+  width: 48px;
+  z-index: 3;
+}
+
+.img-slider__slide.is-active .img-slider__img-wrap:hover .img-slider__zoom-hint {
+  opacity: 1;
+}
+
+/* ── Pie de imagen ──────────────────────────────────────── */
+
+.img-slider__caption {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 0.8125rem;
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+
+/* ── Navegación: flechas abajo centradas ────────────────── */
+
+.img-slider__nav {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: center;
+}
+
+.img-slider__arrow {
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid var(--primary-color-black);
+  border-radius: 50% !important;
+  color: var(--primary-color-black);
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: var(--img-arrow-size, 44px);
+  justify-content: center;
+  padding: 0;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  width: var(--img-arrow-size, 44px);
+}
+
+.img-slider__arrow:hover,
+.img-slider__arrow:focus {
+  background-color: var(--primary-color-black);
+  border-color: var(--primary-color-black);
+  color: #ffffff;
+  transform: scale(1.07);
+}
+
+.img-slider__arrow:disabled {
+  border-color: rgba(0, 0, 0, 0.18);
+  color: rgba(0, 0, 0, 0.18);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Lightbox ───────────────────────────────────────────── */
+
+.img-slider__lightbox {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.img-slider__lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Fondo oscuro */
+.img-slider__lightbox-backdrop {
+  background-color: rgba(15, 20, 35, 0.88);
+  bottom: 0;
+  cursor: zoom-out;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Contenedor de imagen */
+.img-slider__lightbox-content {
+  max-height: 92vh;
+  max-width: 92vw;
+  position: relative;
+  z-index: 1;
+}
+
+.img-slider__lightbox-img {
+  border-radius: 8px;
+  display: block;
+  max-height: 88vh;
+  max-width: 90vw;
+  object-fit: contain;
+  width: auto;
+}
+
+/* Botón de cierre */
+.img-slider__lightbox-close {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  transition: background-color 0.2s ease;
+  width: 40px;
+  z-index: 2;
+}
+
+.img-slider__lightbox-close:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .img-slider__slide {
+    flex: 0 0 82%;
+  }
+
+  .img-slider__lightbox-img {
+    max-width: 95vw;
+  }
+
+  .img-slider__zoom-hint {
+    opacity: 1;
+  }
+}

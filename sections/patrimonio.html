@@ -1,0 +1,105 @@
+<!--
+  templateType: section
+  label: Patrimonio – 22 años construyendo
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/patrimonio.png
+  description: "Dos columnas: izquierda con heading + tarjetas de ícono/texto; derecha con infografía."
+-->
+
+{% dnd_section
+  background_color="#F8FAFF",
+  vertical_alignment="MIDDLE"
+%}
+
+  {# ── Columna izquierda: heading + estadísticas ──────────── #}
+  {% dnd_column
+    offset=0,
+    width=5
+  %}
+
+    {# Heading principal #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/header",
+        label="Patrimonio – Título",
+        extra_classes="patrimonio__heading-module",
+        header_tag="h2",
+        value="22 años construyendo el patrimonio de México."
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# Stat 1: Familias #}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Stat – Familias",
+        extra_classes="patrimonio__stat",
+        icon={
+          "src": get_asset_url("../images/icon-familia.png"),
+          "alt": "Ícono familias",
+          "loading": "lazy"
+        },
+        icon_position="left",
+        icon_size=40,
+        icon_gap=16,
+        content='<p class="icon-rt__title"><strong>65,000</strong> familias</p><p class="icon-rt__desc">Que ya habitan en una comunidad Vinte.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# Stat 2: Calidad #}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Stat – Calidad",
+        extra_classes="patrimonio__stat",
+        icon={
+          "src": get_asset_url("../images/icon-calidad.png"),
+          "alt": "Ícono calidad garantizada",
+          "loading": "lazy"
+        },
+        icon_position="left",
+        icon_size=40,
+        icon_gap=16,
+        content='<p class="icon-rt__title"><strong>Calidad</strong> Garantizada</p><p class="icon-rt__desc">Viviendas diseñadas para aumentar su plusvalía año con año.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# Disclaimer #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Patrimonio – Disclaimer",
+        extra_classes="patrimonio__disclaimer-module",
+        html='<p>*Este cálculo es aproximado y puede variar dependiendo la vivienda. Las imágenes son representativas, sujeto a cambiar sin previo aviso.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+  {# ── Columna derecha: infografía ───────────────────────── #}
+  {% dnd_column
+    offset=5,
+    width=7
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/linked_image",
+        label="Patrimonio – Infografía",
+        extra_classes="patrimonio__infografia-module",
+        img={
+          "src": get_asset_url("../images/infografia-construyendo.png"),
+          "alt": "22 años construyendo el patrimonio de México – infografía de plusvalía",
+          "loading": "lazy",
+          "size_type": "auto"
+        },
+        open_in_new_tab=false
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

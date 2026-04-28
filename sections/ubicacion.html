@@ -1,0 +1,101 @@
+<!--
+  templateType: section
+  label: Ubicación – Real Lucerna
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/ubicacion.png
+  description: "Dos columnas: izquierda con heading, intro y 3 bullets de ubicación; derecha con mapa ilustrado."
+-->
+
+{% dnd_section
+  background_color="#ffffff",
+  vertical_alignment="MIDDLE",
+  padding={
+    "default": { "top": 60, "bottom": 60 },
+    "mobile":  { "top": 40, "bottom": 40 }
+  }
+%}
+
+  {# ── Columna izquierda: heading + intro + bullets ─────────── #}
+  {% dnd_column offset=0, width=5 %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/header",
+        label="Ubicación – Título",
+        extra_classes="ubicacion__heading-module",
+        header_tag="h2",
+        value="Cerca de tu trabajo, cerca del mar."
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Ubicación – Intro",
+        extra_classes="ubicacion__intro-module",
+        html='<p>Las casas de Real Lucerna están ubicadas estratégicamente sobre la Av. Colosio ¡te conectamos con lo mejor de Playa del Carmen!</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Ubicación – 15 minutos",
+        extra_classes="ubicacion__bullet",
+        icon={ "src": get_asset_url("../images/icon-ubicacion-pin.png"), "alt": "Pin de ubicación", "loading": "lazy" },
+        icon_position="left", icon_size=40, icon_gap=16,
+        content='<p class="icon-rt__title"><strong>15 minutos</strong> de la playa y la Quinta Avenida.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Ubicación – Conectividad",
+        extra_classes="ubicacion__bullet",
+        icon={ "src": get_asset_url("../images/icon-ubicacion-pin.png"), "alt": "Pin de ubicación", "loading": "lazy" },
+        icon_position="left", icon_size=40, icon_gap=16,
+        content='<p class="icon-rt__title"><strong>Conectividad</strong>: Cerca de la estación del Tren Maya y centros comerciales (Walmart, Multiplaza).</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Ubicación – Servicios",
+        extra_classes="ubicacion__bullet",
+        icon={ "src": get_asset_url("../images/icon-ubicacion-pin.png"), "alt": "Pin de ubicación", "loading": "lazy" },
+        icon_position="left", icon_size=40, icon_gap=16,
+        content='<p class="icon-rt__title"><strong>Servicios</strong>: Escuelas, hospitales y transporte a la mano.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+  {# ── Columna derecha: mapa ilustrado ──────────────────────── #}
+  {% dnd_column offset=5, width=7 %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/linked_image",
+        label="Ubicación – Mapa",
+        extra_classes="ubicacion__mapa-module",
+        img={
+          "src": get_asset_url("../images/mapa-ubicacion.jpg"),
+          "alt": "Mapa de ubicación Real Lucerna – Playa del Carmen",
+          "loading": "lazy",
+          "size_type": "auto"
+        },
+        open_in_new_tab=false
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

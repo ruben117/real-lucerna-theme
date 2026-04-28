@@ -1,0 +1,121 @@
+/* ── Artículos Grid ──────────────────────────────────────── */
+
+.art-grid {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Variantes de columnas */
+.art-grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+.art-grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+.art-grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ── Tarjeta ─────────────────────────────────────────────── */
+
+.art-grid__card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Imagen ──────────────────────────────────────────────── */
+
+.art-grid__img-link {
+  display: block;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+}
+
+.art-grid__img-wrap {
+  aspect-ratio: var(--art-ratio, 16/9);
+  border-radius: var(--art-radius, 8px);
+  overflow: hidden;
+  width: 100%;
+}
+
+.art-grid__img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+
+.art-grid__card:hover .art-grid__img {
+  transform: scale(1.04);
+}
+
+/* ── Cuerpo ──────────────────────────────────────────────── */
+
+.art-grid__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* Fecha – debajo de imagen, antes del cuerpo */
+.art-grid__date {
+  color: var(--secondary-color);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0px 0px 10px;
+}
+
+/* Título */
+.art-grid__title {
+  font-size: 20px;
+    font-weight: var(--font-weight-heading);
+    line-height: 1.15;
+    margin: 0 0 .625rem;
+}
+
+.art-grid__title a {
+  color: var(--heading-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.art-grid__title a:hover {
+  color: var(--primary-color, #E0001A);
+}
+
+/* Extracto */
+.art-grid__excerpt {
+  color: var(--text-color);
+  flex: 1;
+  font-size: var(--font-size-base);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+/* Leer más */
+.art-grid__read-more {
+  align-items: center;
+  color: var(--primary-color, #E0001A);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-heading);
+  gap: 0.375rem;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.art-grid__read-more:hover {
+  gap: 0.6rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 991px) {
+  .art-grid--cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .art-grid--cols-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .art-grid--cols-2,
+  .art-grid--cols-3,
+  .art-grid--cols-4 {
+    grid-template-columns: 1fr;
+  }
+}

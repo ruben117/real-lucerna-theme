@@ -1,0 +1,71 @@
+/* ============================================================
+   SECCIÓN: CONTACTO
+   ============================================================ */
+
+/* ── Overlay sobre imagen de fondo ──────────────────────────── */
+
+.dnd-section:has(.contacto__heading-module) {
+  position: relative;
+}
+
+.dnd-section:has(.contacto__heading-module)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(28, 40, 80, 0.88) 0%,
+    rgba(28, 40, 80, 0.60) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dnd-section:has(.contacto__heading-module) .row-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Columna izquierda ────────────────────────────────────── */
+
+.contacto__heading-module h2 {
+  color: #ffffff;
+  font-size: clamp(24px, 2.2vw, 38px);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+.contacto__desc-module p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.6;
+  margin: 0 0 1.75rem;
+}
+
+/* ── Columna derecha: contenedor del formulario ──────────── */
+
+.dnd-column:has(.contacto__form-module) {
+  background-color: #F8FAFF;
+  border: 1px solid #DADAF0;
+  border-radius: 12px;
+  padding: 2rem 2.25rem 2.5rem;
+}
+
+.contacto__form-label {
+  color: var(--secondary-color);
+  font-size: 11px;
+  font-weight: var(--font-weight-heading);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .dnd-column:has(.contacto__form-module) {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+}

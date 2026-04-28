@@ -1,0 +1,31 @@
+<!--
+  templateType: section
+  label: Entrada – Real Lucerna
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/entrada.png
+  description: "Imagen fullwidth de la entrada del fraccionamiento."
+-->
+
+{% dnd_section
+  full_width=true,
+  background_color="#ffffff",
+  padding={
+    "default": { "top": 0, "bottom": 0, "left": 0, "right": 0 },
+    "mobile":  { "top": 0, "bottom": 0, "left": 0, "right": 0 }
+  }
+%}
+  {% dnd_module
+    path="@hubspot/linked_image",
+    label="Entrada – Imagen",
+    extra_classes="entrada__img-module",
+    offset=0,
+    width=12,
+    img={
+      "src": get_asset_url("../images/bgk-entrada-real-lucerna.jpg"),
+      "alt": "Entrada del fraccionamiento Real Lucerna",
+      "loading": "lazy",
+      "size_type": "auto"
+    }
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

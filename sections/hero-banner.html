@@ -1,42 +1,65 @@
 <!--
   templateType: section
-  label: Hero banner
+  label: Hero Banner – Real Lucerna
   isAvailableForNewContent: true
   screenshotPath: ../images/section-previews/hero-banner.png
-  description: "Full size background image section separated in two columns. Left column has heading and text and right column has a form."
+  description: "Hero de pantalla completa (100vh) con imagen de fondo, dos headings editables y texto con botones CTA."
 -->
 {% dnd_section
-  background_color={{ context.background_color or "#f8fafc" }},
-  vertical_alignment="MIDDLE"
+  background_color="#375CA1",
+  background_image={
+    "backgroundSize": "cover",
+    "backgroundPosition": "MIDDLE_CENTER",
+    "imageUrl": get_asset_url("../images/bgk-hero.jpg")
+  },
+  vertical_alignment="MIDDLE",
+  padding={
+    "default": { "top": 220, "bottom": 120 },
+    "mobile":  { "top": 160, "bottom": 60 }
+  }
 %}
-  {% dnd_module
-    path="@hubspot/linked_image",
-    img={
-      "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
-      "loading": context.image_loading or "disabled",
-      "max_height": context.image_height or 451,
-      "max_width": context.image_width or 605,
-      "size_type": "auto_custom_max",
-      "src": context.image or get_asset_url("../images/grayscale-mountain.png")
-    },
-    offset=0,
-    width=6
-  %}
-  {% end_dnd_module %}
+
+  {# Columna de contenido: máximo 6/12 cols (50%) #}
   {% dnd_column
-    offset=6,
-    width=6
+    offset=0,
+    width=8
   %}
+
+    {# Overline: "Casas en venta en Playa del Carmen" #}
     {% dnd_row %}
       {% dnd_module
-        path="@hubspot/rich_text"
-        html={{ context.content or "<h1>This is your main headline.</h1><p>Use this space to tell everyone about what you have to offer.</p>" }}
+        path="@hubspot/header",
+        label="Hero – Overline",
+        extra_classes="hero__eyebrow-module",
+        header_tag="h3",
+        value="Casas en venta en <strong>Playa del Carmen</strong>"
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}
+
+    {# Título H1 principal #}
     {% dnd_row %}
-      {% dnd_module path="@hubspot/form" %}
+      {% dnd_module
+        path="@hubspot/header",
+        label="Hero – Título H1",
+        extra_classes="hero__title-module",
+        header_tag="h1",
+        value="Calidad de vida, seguridad y comunidad."
+      %}
       {% end_dnd_module %}
     {% end_dnd_row %}
+
+    {# Descripción + Botones CTA #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Hero – Descripción y CTAs",
+        extra_classes="hero__body-module",
+        html='<p>Construye hoy tu patrimonio en el Caribe Mexicano con Real Lucerna. Descubre la tranquilidad de vivir en privadas exclusivas con alberca, parques integrales y el respaldo sólido de los 22 años de experiencia de Vinte. Tu lugar en Playa del Carmen, a solo 15 minutos del mar.</p><div class="hero__ctas"><a href="#catalogos" class="btn-primary">Ver catálogo de casas</a><a href="https://wa.me/5219197470" class="btn-outline">Agendar visita por WhatsApp</a></div>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
   {% end_dnd_column %}
+
 {% end_dnd_section %}
