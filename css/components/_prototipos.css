@@ -49,6 +49,9 @@
 /* ── Responsive ──────────────────────────────────────────── */
 
 @media (max-width: 767px) {
+  .prototipos__cta-buttons {
+    justify-content: center;
+  }
   .prototipos__cta-actions {
     flex-direction: column;
     justify-content: flex-start;

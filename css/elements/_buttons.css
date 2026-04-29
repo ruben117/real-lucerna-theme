@@ -61,6 +61,8 @@ button:disabled,
   border-color: var(--primary-color-black);
   color: #ffffff !important;
   transform: translateY(-2px);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 /* Botón outline – borde blanco */
@@ -106,4 +108,6 @@ button:disabled,
   background-color: #ffffff;
   color: var(--primary-color-black) !important;
   transform: translateY(-2px);
+  text-decoration: none;
+  font-weight: 600;
 }

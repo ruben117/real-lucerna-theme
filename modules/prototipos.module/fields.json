@@ -34,6 +34,13 @@
         "label": "Descripción",
         "type": "text",
         "default": ""
+      },
+      {
+        "id": "prototipo_enlace",
+        "name": "prototipo_enlace",
+        "label": "Enlace (página del prototipo)",
+        "type": "link",
+        "default": { "url": { "href": "" }, "open_in_new_tab": false }
       }
     ]
   }

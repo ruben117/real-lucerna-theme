@@ -1,0 +1,30 @@
+[
+  {
+    "id": "hero_imagen",
+    "name": "hero_imagen",
+    "label": "Imagen de fondo",
+    "type": "image",
+    "default": { "src": "", "alt": "", "loading": "eager" }
+  },
+  {
+    "id": "hero_eyebrow",
+    "name": "hero_eyebrow",
+    "label": "Eyebrow / Modelo (h2)",
+    "type": "text",
+    "default": "Modelo Paraíso"
+  },
+  {
+    "id": "hero_titulo",
+    "name": "hero_titulo",
+    "label": "Título principal (h1)",
+    "type": "text",
+    "default": "Espacio, Exclusividad y Plusvalía."
+  },
+  {
+    "id": "hero_descripcion",
+    "name": "hero_descripcion",
+    "label": "Descripción",
+    "type": "richtext",
+    "default": "<p>Con 96.61 m² de construcción, este modelo es la joya de Real Lucerna. Diseñado con un sistema Lock-off, te permite vivir cómodamente mientras generas ingresos extra por rentas independientes.</p>"
+  }
+]

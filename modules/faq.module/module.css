@@ -4,6 +4,9 @@
   background-color: #ffffff;
   border-radius: 12px;
   overflow: hidden;
+  width: 85%;
+  margin: 0px auto;
+  padding: 0px 20px;
 }
 
 /* ── Item ──────────────────────────────────────────────────── */
@@ -27,15 +30,22 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 1.25rem 1.5rem;
+  padding: 10px 0px;
   text-align: left;
 }
 
 .faq__pregunta {
   color: var(--heading-color);
-  font-size: clamp(14px, 1vw, 16px);
-  font-weight: 400;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-heading);
   line-height: 1.4;
+}
+
+.faq__trigger:hover,
+.faq__trigger:focus {
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
 }
 
 /* ── Chevron icon ──────────────────────────────────────────── */
@@ -61,7 +71,7 @@
 }
 
 .faq__icon::before {
-  right: calc(50% + 1px);
+  right: calc(50% + -2px);
   transform: translateY(-50%) rotate(-45deg);
   transform-origin: right center;
 }
@@ -94,7 +104,7 @@
 }
 
 .faq__respuesta-inner {
-  padding: 0 1.5rem 1.25rem;
+  padding: 0 0.5rem 0.25rem;
 }
 
 .faq__respuesta-inner p {
@@ -102,4 +112,10 @@
   font-size: clamp(13px, 0.9vw, 15px);
   line-height: 1.6;
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .faq {
+    width: 100%;
+  }
 }

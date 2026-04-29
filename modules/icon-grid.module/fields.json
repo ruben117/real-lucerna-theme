@@ -101,7 +101,7 @@
         "type": "number",
         "min": 0,
         "max": 40,
-        "default": 14
+        "default": 0
       },
       {
         "id": "icono_radius",
@@ -110,7 +110,7 @@
         "type": "number",
         "min": 0,
         "max": 80,
-        "default": 8
+        "default": 0
       },
       {
         "id": "icono_bg",

@@ -1,7 +1,19 @@
-<div class="prototipos-grid">
+<div class="prototipos-grid" data-prototipos-grid>
   {% for item in module.items %}
   {% set img_src = item.prototipo_imagen.src if item.prototipo_imagen.src else get_asset_url("../../images/large-placeholder-image.png") %}
-  <div class="prototipos-grid__card">
+  {% set href = item.prototipo_enlace.url.href | default('') %}
+
+  {% if href %}
+  <a
+    class="prototipos-grid__card"
+    href="{{ href | escape_url }}"
+    {% if item.prototipo_enlace.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+    data-prototipo-card
+  >
+  {% else %}
+  <div class="prototipos-grid__card" data-prototipo-card>
+  {% endif %}
+
     <img
       class="prototipos-grid__img"
       src="{{ img_src }}"
@@ -14,6 +26,7 @@
       <p class="prototipos-grid__m2">({{ item.prototipo_m2 | escape_html }})</p>
       <p class="prototipos-grid__desc">{{ item.prototipo_desc | escape_html }}</p>
     </div>
-  </div>
+
+  {% if href %}</a>{% else %}</div>{% endif %}
   {% endfor %}
 </div>

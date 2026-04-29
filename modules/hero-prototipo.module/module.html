@@ -1,0 +1,16 @@
+{% set img_src = module.hero_imagen.src if module.hero_imagen.src else get_asset_url("../../images/bgk-prototipo-paraiso.jpg") %}
+
+<div class="hero-prototipo">
+  <img
+    class="hero-prototipo__bg"
+    src="{{ img_src }}"
+    alt="{{ module.hero_imagen.alt | escape_attr }}"
+    loading="eager"
+  >
+  <div class="hero-prototipo__overlay"></div>
+  <div class="hero-prototipo__content">
+    <h2 class="hero-prototipo__eyebrow">{{ module.hero_eyebrow | escape_html }}</h2>
+    <h1 class="hero-prototipo__titulo">{{ module.hero_titulo | escape_html }}</h1>
+    <div class="hero-prototipo__desc">{{ module.hero_descripcion | sanitize_html }}</div>
+  </div>
+</div>
