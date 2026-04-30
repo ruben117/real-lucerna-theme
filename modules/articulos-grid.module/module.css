@@ -77,7 +77,7 @@
 }
 
 .art-grid__title a:hover {
-  color: var(--primary-color, #E0001A);
+  color: var(--primary-color);
 }
 
 /* Extracto */
@@ -92,7 +92,7 @@
 /* Leer más */
 .art-grid__read-more {
   align-items: center;
-  color: var(--primary-color, #E0001A);
+  color: var(--primary-color);
   display: inline-flex;
   font-size: 0.875rem;
   font-weight: var(--font-weight-heading);

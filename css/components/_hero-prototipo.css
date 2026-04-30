@@ -21,16 +21,6 @@
   z-index: 1;
 }
 
-/* Quita el padding por defecto del dnd-column */
-.dnd-section:has(.hero-prototipo__eyebrow-module) .dnd-column {
-  padding: 0 0 0 4rem;
-}
-
-@media screen and (min-width: 1380px) {
-  .dnd-section:has(.hero-prototipo__eyebrow-module) .dnd-column {
-    padding-left: 6rem;
-  }
-}
 
 /* ── Eyebrow h2 ──────────────────────────────────────────── */
 

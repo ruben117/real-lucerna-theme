@@ -63,3 +63,42 @@
     text-align: center;
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   SECCIÓN OVERVIEW
+   ══════════════════════════════════════════════════════════ */
+
+/* Etiqueta "OVERVIEW" con border-top */
+.overview-label {
+  border-bottom: 1.5px solid #E5E5E5;
+  color: var(--primary-color, #E0001A);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing-base);
+  margin: 0px 0px 20px;
+  padding: 0px 0px 15px;
+  text-transform: uppercase;
+}
+
+/* Precio H2 */
+.dnd-module:has(.proto-overview__content-module) h2 {
+  color: var(--heading-color, #171717);
+  font-size: var(--font-size-subheading);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+}
+
+/* Texto de disclaimer */
+.dnd-module:has(.proto-overview__content-module) p:not(.overview-label) {
+  color: var(--text-color, #737491);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Floor-plan: alineación vertical centrada */
+.dnd-module:has(.proto-overview__floorplan-module) {
+  align-items: center;
+  display: flex;
+}
