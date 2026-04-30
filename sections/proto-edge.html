@@ -1,0 +1,80 @@
+<!--
+  templateType: section
+  label: Prototipo – Certificación EDGE
+  isAvailableForNewContent: true
+  description: "Sección de certificación EDGE: logo, heading y descripción centrados sobre fondo #F8FAFF."
+-->
+
+{% dnd_section
+  background_color="#F8FAFF",
+  vertical_alignment="MIDDLE",
+  padding={
+    "default": { "top": 80, "bottom": 80 },
+    "mobile":  { "top": 50, "bottom": 50 }
+  }
+  max_width={{ context.max_width or 1000 }},
+%}
+
+  {% dnd_column %}
+
+    {# ── Logo EDGE ──────────────────────────────────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/linked_image",
+        label="EDGE – Logo",
+        extra_classes="proto-edge__logo-module",
+        img={
+          "src": get_asset_url("../images/certificado-edge.png"),
+          "alt": "EDGE – Excellence In Design For Greater Efficiencies",
+          "loading": "eager",
+          "width": 220
+        },
+        link={ "url": { "type": "EXTERNAL", "href": "" } },
+        open_in_new_tab=false
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# ── Heading ─────────────────────────────────────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/header",
+        label="EDGE – Heading",
+        extra_classes="proto-edge__heading-module",
+        header_tag="h2",
+        value="Una inversión que cuida tu bolsillo."
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# ── Descripción ─────────────────────────────────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="EDGE – Descripción",
+        extra_classes="proto-edge__desc-module",
+        html='<p>El Modelo Paraíso está diseñado bajo estándares de sostenibilidad internacional. Gracias a su certificación <strong>EDGE</strong>, esta casa te permite ahorrar hasta un <strong>50% en tus recibos de luz y agua.</strong></p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# ── Descripción ─────────────────────────────────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/edge-stat",
+        label="Cert. EDGE – Stats",
+        extra_classes="cert-edge__stats-module",
+        offset=0, width=12,
+        items=[
+          { "tipo": "energia",      "valor": 31   },
+          { "tipo": "agua",         "valor": 44   },
+          { "tipo": "co2",          "valor": 1.62 },
+          { "tipo": "nivel_ahorro", "valor": 75   }
+        ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

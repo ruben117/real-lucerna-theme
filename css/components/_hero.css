@@ -6,28 +6,10 @@
 /* ── Sección: altura de viewport completo ────────────────── */
 
 .dnd-section:has(.hero__eyebrow-module) {
-  min-height: 100vh;
+  min-height: 80vh;
   position: relative;
 }
 
-/* ── Overlay oscuro de izquierda a derecha ───────────────── */
-
-.dnd-section:has(.hero__eyebrow-module)::before {
-  background: linear-gradient(
-    to right,
-    rgba(33, 55, 100, 0.82) 0%,
-    rgba(33, 55, 100, 0.60) 45%,
-    rgba(33, 55, 100, 0.10) 75%,
-    transparent 100%
-  );
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-}
 
 /* El row-fluid queda sobre el overlay */
 .dnd-section:has(.hero__eyebrow-module) > .row-fluid {
@@ -93,7 +75,7 @@ color: #ffffff;
     align-content: center;
     align-items: center;
     display: flex;
-    min-height: 100svh;
+    min-height: 90svh;
   }
 
   .dnd-section:has(.hero__eyebrow-module)::before {

@@ -67,6 +67,8 @@ Specific pieces of UI that are stylized. Typically used for global partial styli
 {% include './components/_faq.css' %}
 {% include './components/_articulos.css' %}
 {% include './components/_contacto.css' %}
+{% include './components/_proto-edge.css' %}
+{% include './components/_call-to-action.css' %}
 {% include './components/_default-modules.css' %}
 
 /* Utilities

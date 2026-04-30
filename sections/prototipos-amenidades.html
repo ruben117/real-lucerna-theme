@@ -1,0 +1,128 @@
+<!--
+  templateType: section
+  label: Prototipo – Amenidades
+  isAvailableForNewContent: true
+  description: "Sección de amenidades."
+-->
+
+{% dnd_section
+  background_color="#ffffff",
+  vertical_alignment="MIDDLE",
+  padding={
+    "default": { "top": 80, "bottom": 80 },
+    "mobile":  { "top": 50, "bottom": 50 }
+  }
+%}
+
+  {% dnd_column %}
+
+    {# ── Heading ─────────────────────────────────────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/header",
+        label="EDGE – Heading",
+        extra_classes="proto-edge__heading-module",
+        header_tag="h2",
+        value="Tu casa, tu club privado."
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# ── Descripción ─────────────────────────────────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="EDGE – Descripción",
+        extra_classes="proto-edge__desc-module",
+        html='<p>EAl adquirir un Modelo Paraíso, no solo compras metros cuadrados, adquieres acceso total a:',
+        padding={
+          "default": { "bottom": 30 },
+          "mobile":  { "bottom": 30 }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# ── Fila 1: Alberca · Parque · Gimnasio ─────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Amenidad – Alberca",
+        extra_classes="amenidades__card",
+        icon={ "src": get_asset_url("../images/icon-amenidades-alberca.png"), "alt": "Alberca con palapa", "loading": "lazy" },
+        icon_position="left", icon_size=32, icon_gap=16,
+        content='<p class="icon-rt__title"><strong>Alberca</strong> con palapa</p><p class="icon-rt__desc">Exclusividad y descanso a unos pasos de tu puerta.</p>'    
+        offset=0, width=4
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Amenidad – Parque",
+        extra_classes="amenidades__card",
+        icon={ "src": get_asset_url("../images/icon-amenidades-parque-central.png"), "alt": "Parque Central", "loading": "lazy" },
+        icon_position="left", icon_size=32, icon_gap=16,
+        content='<p class="icon-rt__title"><strong>Parque</strong> Central</p><p class="icon-rt__desc">El pulmón verde donde la comunidad se encuentra.</p>'    
+        offset=4, width=4
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Amenidad – Gimnasio",
+        extra_classes="amenidades__card",
+        icon={ "src": get_asset_url("../images/icon-amenidades-gimansio.png"), "alt": "Gimnasio al aire libre", "loading": "lazy" },
+        icon_position="left", icon_size=32, icon_gap=16,
+        content='<p class="icon-rt__title"><strong>Gimnasio</strong> al aire libre</p><p class="icon-rt__desc">Actívate en un entorno seguro y natural.</p>'    
+        offset=8, width=4
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# ── Galería slider ─────────────────────────────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/image-slider",
+        label="Galería – Slider",
+        extra_classes="galeria__slider-module galeria__prototipos-amenidades",
+        loop=true,
+        autoplay=false,
+        lightbox=true,
+        start_index=1,
+        slides=[
+          {
+            "image": {
+              "src": get_asset_url("../images/galeria-1.jpg"),
+              "alt": "Área de juegos infantiles",
+              "loading": "eager"
+            }
+          },
+          {
+            "image": {
+              "src": get_asset_url("../images/galeria-2.jpg"),
+              "alt": "Área de ejercicio al aire libre",
+              "loading": "lazy"
+            }
+          },
+          {
+            "image": {
+              "src": get_asset_url("../images/galeria-3.jpg"),
+              "alt": "Palapa y área de descanso",
+              "loading": "lazy"
+            }
+          }
+        ],
+        settings={
+          "slide_width": 52,
+          "inactive_scale": 88,
+          "inactive_overlay": 45,
+          "gap": 20,
+          "aspect_ratio": "4/3",
+          "border_radius": 12,
+          "arrow_size": 44
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}
