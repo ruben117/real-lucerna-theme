@@ -265,6 +265,8 @@
 .gal-slider__lb-close:hover {
   background-color: #ffffff;
   transform: scale(1.1);
+  border-radius: 50%;
+  color:var(--primary-color-black) !important;
 }
 
 .gal-slider__lb-body {

@@ -45,6 +45,7 @@
 .floor-plan__nav-btn:hover {
   background-color: var(--primary-color, #E0001A);
   color: #ffffff;
+  border-radius: 50%;
   transform: scale(1.06);
 }
 

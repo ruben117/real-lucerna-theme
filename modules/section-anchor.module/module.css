@@ -13,5 +13,15 @@
   height: 0;
   overflow: hidden;
   pointer-events: none;
-  scroll-margin-top: var(--header-height, 100px);
+  scroll-margin-top: 80px;
+}
+
+/*
+  scroll-padding-top en html: fallback para el scroll nativo
+  del navegador en la primera carga con hash en la URL.
+  El JS lo sobreescribe con la altura real del header.
+*/
+
+html {
+  scroll-behavior: smooth;
 }

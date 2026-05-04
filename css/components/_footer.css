@@ -64,7 +64,8 @@
   line-height: 1.5;
   font-weight: 300;
 }
-.footer_legal span{
+.footer__legal span,
+.footer__legal a {
   
   color: #9ca3af;
 }

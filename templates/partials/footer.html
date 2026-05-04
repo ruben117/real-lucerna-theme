@@ -33,8 +33,11 @@
 
     {# ── Row 2: Legal / copyright ── #}
     <div class="footer__legal">
-      <span>© {{ year }} Real Lucerna – Comunidad Vinte. Exclusividad Garantizada.</span>
+      <span>© {{ year }} Real Lucerna – Comunidad Vinte. Exclusividad Garantizada. | <a href="https://www.vinte.com.mx/privacidad" target="_blank">Aviso de privacidad</a></span>
     </div>
 
   </div>
+  {% end_dnd_area %}
+  {# WhatsApp Floating Bubble — fuera del DnD, position:fixed en CSS #}
+  {% module "whatsapp_bubble" path="../../modules/whatsapp-bubble" %}
 </footer>

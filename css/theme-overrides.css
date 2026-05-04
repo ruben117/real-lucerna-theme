@@ -142,7 +142,7 @@
 {% set nav_drop_down_bg_color = color(theme.header.menu.drop_downs.background.color) %}
 {% set nav_drop_down_border = theme.header.menu.drop_downs.border.border.css %}
 
-{% set header_bg_color = color(theme.header.background.color) %}
+{% set header_bg_color = "#375CA1;" %}
 
 /* 1h. Website footer */
 
@@ -197,11 +197,13 @@ a:hover,
 a:focus {
   {{ anchor_font.style }};
   color: {{ color_variant(anchor_font.color, -40) }};
+  text-decoration: none;
 }
 
 a:active {
   {{ anchor_font.style }};
   color: {{ color_variant(anchor_font.color, 40) }};
+  text-decoration: none;
 }
 
 /* Headings */
