@@ -29,7 +29,20 @@
   opacity: 0.75;
 }
 
-/* ── Columna de imagen: centrada y responsive ────────────── */
+/* ── Columna de imagen: centrada, responsive y animada ───── */
+
+.patrimonio__infografia-module {
+  opacity: 0;
+  transform: translateX(60px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+.patrimonio__infografia-module.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 .patrimonio__infografia-module img {
   display: block;

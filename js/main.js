@@ -97,11 +97,47 @@
     emailGlobalUnsub.addEventListener('change', toggleDisabled);
   }
 
+  // ── Scroll reveal: fade-in al entrar al viewport ──────────────
+  //    Agrega la clase .is-visible cuando el elemento es visible.
+  //    Agregar aquí nuevos selectores para reutilizar el efecto.
+  var REVEAL_SELECTORS = [
+    '.patrimonio__infografia-module'
+  ];
+
+  function initScrollReveal() {
+    var targets = [];
+    REVEAL_SELECTORS.forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el) {
+        targets.push(el);
+      });
+    });
+
+    if (!targets.length) return;
+
+    // Sin soporte de IntersectionObserver: mostrar todo directamente
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    targets.forEach(function (el) { observer.observe(el); });
+  }
+
   // ── Init ───────────────────────────────────────────────────────
   domReady(function () {
     if (!document.body) return;
     initHeader();
     initEmailUnsub();
+    initScrollReveal();
   });
 
 })();
