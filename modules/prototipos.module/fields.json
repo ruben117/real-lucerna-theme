@@ -25,7 +25,7 @@
         "id": "prototipo_m2",
         "name": "prototipo_m2",
         "label": "Metros cuadrados",
-        "type": "text",
+        "type": "richtext",
         "default": "00.00 m²"
       },
       {
@@ -41,6 +41,27 @@
         "label": "Enlace (página del prototipo)",
         "type": "link",
         "default": { "url": { "href": "" }, "open_in_new_tab": false }
+      },
+      {
+        "id": "prototipo_type",
+        "name": "prototipo_type",
+        "label": "Tipo de construcción",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["depa", "Depa"],
+          ["casa", "Casa"]
+        ],
+        "default": "depa"
+      },
+      {
+        "id": "is_lockoff",
+        "name": "is_lockoff",
+        "label": "Lock-off",
+        "type": "boolean",
+        "display": "checkbox",
+        
+        "default": false
       }
     ]
   }
