@@ -180,6 +180,10 @@
 }
 
 /* Submenú dropdown */
+.menu__item--depth-1{
+  display:flex !important;
+  gap:10px;
+}
 .header__nav .menu__submenu {
   background-color: rgba(55, 92, 161, 0.97) !important;
   border: none !important;
@@ -286,6 +290,9 @@
 /* ── Responsive – Mobile (≤ 767px) ──────────────────────── */
 
 @media (max-width: 767px) {
+  .menu__item--depth-1{
+    flex-direction:column;
+  }
   .header__hamburger {
     display: flex;
   }

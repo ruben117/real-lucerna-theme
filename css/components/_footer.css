@@ -53,6 +53,9 @@
   text-align: right;
   max-width: 480px;
   font-weight: 300;
+  a{
+    color: #9ca3af;
+  }
 }
 
 /* ── Row 2: Legal ── */

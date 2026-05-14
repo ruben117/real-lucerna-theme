@@ -22,8 +22,39 @@
     >
     <div class="prototipos-grid__overlay"></div>
     <div class="prototipos-grid__content">
-      <h3 class="prototipos-grid__nombre">{{ item.prototipo_nombre | escape_html }}</h3>
-      <p class="prototipos-grid__m2">({{ item.prototipo_m2 | escape_html }})</p>
+      <div class="prototipos-grid-name-cont">
+        {% if item.prototipo_type == "casa" %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28" fill="none">
+            <rect width="26.627" height="27.12" fill="#CBD527"/>
+            <mask id="mask0_6004_86" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="5" width="17" height="17">
+            <path d="M5 5H22V22H5V5Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_6004_86)">
+            <path d="M5.66406 13.5L13.5 5.66406L21.3359 13.5" stroke="#33425D" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.9707 12.194V21.3359H20.0306V12.194" stroke="#33425D" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.8887 21.3359V16.112H16.1126V21.3359" stroke="#33425D" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+          {% else %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28" fill="none">
+            <rect width="26.627" height="27.12" fill="#CBD527"/>
+            <path d="M14.9844 22.2578V7.71094H6.07812V22.2578" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M14.9844 11.125L20.9219 12.6094V22.2578" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M7.5625 7.71094V4.74219H13.5L13.5 7.71094" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M17.9531 8.15625V11.8672" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M4 22.2578H23" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M17.9531 20.0312V22.2578" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M17.9531 18.5469V17.0625" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M17.9531 15.5781V14.0938" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M9.04688 22.2578V19.2891H12.0156V22.2578" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M8.30469 16.4688H12.7578" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M8.30469 13.5H12.7578" stroke="#33425D" stroke-miterlimit="10"/>
+            <path d="M8.30469 10.5312H12.7578" stroke="#33425D" stroke-miterlimit="10"/>
+          </svg>
+          {% endif %}
+        <h3 class="prototipos-grid__nombre">{{ item.prototipo_nombre | escape_html }}</h3>
+      </div>
+        <p class="prototipos-grid__m2"> {% if item.is_lockoff == true %} <span style="font-size:22px; font-weigth: light;">Lock-off</span> {% endif %} ({{ item.prototipo_m2 | escape_html }})</p>
       <p class="prototipos-grid__desc">{{ item.prototipo_desc | escape_html }}</p>
     </div>
 
