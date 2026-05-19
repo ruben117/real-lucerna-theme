@@ -11,10 +11,10 @@
 }
 
 
-/* El row-fluid queda sobre el overlay */
+/* row-fluid y contenido quedan sobre el slider (z-index: 0) */
 .dnd-section:has(.hero__eyebrow-module) > .row-fluid {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 /* ── Columna de contenido ────────────────────────────────── */

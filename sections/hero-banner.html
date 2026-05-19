@@ -25,6 +25,22 @@
     width=8
   %}
 
+    {# Slider de fondo – módulo invisible, inyecta el slider en el dnd-section vía JS #}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/hero-bg-slider",
+        label="Hero – Fondo slider",
+        extra_classes="hero__slider-data-module",
+        slides=[
+          { "slide_imagen": { "src": get_asset_url("../images/bgk-hero.jpg"),   "alt": "" } },
+          { "slide_imagen": { "src": get_asset_url("../images/bgk-hero-2.jpg"), "alt": "" } }
+        ],
+        intervalo=5000,
+        duracion_fade=1200
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
     {# Overline: "Casas en venta en Playa del Carmen" #}
     {% dnd_row %}
       {% dnd_module

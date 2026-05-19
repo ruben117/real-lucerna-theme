@@ -1,0 +1,20 @@
+{#
+  hero-bg-slider – Contenedor de datos (invisible en frontend).
+  El JS lee los data-attributes e inyecta el slider como hijo
+  directo del dnd-section, sin tocar los módulos de contenido.
+#}
+<div
+  class="hero-bg-slider-data"
+  data-hero-slider
+  data-intervalo="{{ module.intervalo | default(5000) }}"
+  data-fade="{{ module.duracion_fade | default(1200) }}"
+  aria-hidden="true"
+  style="display:none;"
+>
+  {% for item in module.slides %}
+    {% set img_url = item.slide_imagen.src
+        if item.slide_imagen.src
+        else get_asset_url("../../images/bgk-hero.jpg") %}
+    <span data-slide="{{ img_url | escape_attr }}"></span>
+  {% endfor %}
+</div>

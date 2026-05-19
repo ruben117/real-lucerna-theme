@@ -1,0 +1,35 @@
+/* ── Hero BG Slider ──────────────────────────────────────────
+   El slider es inyectado por JS como hijo directo del dnd-section.
+   El dnd-section ya tiene position: relative en _hero.css.
+   ──────────────────────────────────────────────────────────── */
+
+/* Contenedor del slider: cubre toda la sección */
+.hero-bg-slider {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+/* Cada slide apilado, invisible por defecto */
+.hero-bg-slider__slide {
+  background-position: center center;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  /* transition-duration se aplica inline desde JS con el valor configurado */
+}
+
+.hero-bg-slider__slide.is-active {
+  opacity: 1;
+}

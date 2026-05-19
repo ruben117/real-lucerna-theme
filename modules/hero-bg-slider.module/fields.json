@@ -1,0 +1,39 @@
+[
+  {
+    "id": "slides",
+    "name": "slides",
+    "label": "Imágenes del slider",
+    "type": "group",
+    "repeater": true,
+    "occurrence": { "min": 2, "max": 5, "default": 2 },
+    "children": [
+      {
+        "id": "slide_imagen",
+        "name": "slide_imagen",
+        "label": "Imagen de fondo",
+        "type": "image",
+        "default": {}
+      }
+    ]
+  },
+  {
+    "id": "intervalo",
+    "name": "intervalo",
+    "label": "Tiempo entre slides (ms)",
+    "type": "number",
+    "default": 5000,
+    "min": 2000,
+    "max": 15000,
+    "step": 500
+  },
+  {
+    "id": "duracion_fade",
+    "name": "duracion_fade",
+    "label": "Duración del fade (ms)",
+    "type": "number",
+    "default": 1200,
+    "min": 400,
+    "max": 3000,
+    "step": 100
+  }
+]
