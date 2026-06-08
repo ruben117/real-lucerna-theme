@@ -142,11 +142,11 @@
 {% set nav_drop_down_bg_color = color(theme.header.menu.drop_downs.background.color) %}
 {% set nav_drop_down_border = theme.header.menu.drop_downs.border.border.css %}
 
-{% set header_bg_color = "#375CA1;" %}
+{% set header_bg_color = "rgba(0, 0, 0, 0.42);" %}
 
 /* 1h. Website footer */
 
-{% set footer_bg_color = "#CBD527" %}
+{% set footer_bg_color = "#ffffff" %}
 {% set footer_font_color = theme.footer.text.color.color %}
 
 {###########################################################################}
@@ -176,7 +176,7 @@ html {
 
 body {
   {{ body_font.style }};
-  color: {{ body_font.color }};
+  color: var(--text-color);
   font-size: {{ body_font.size ~ body_font.size_unit }};
 }
 

@@ -1,6 +1,6 @@
 /* ── Proto Specs ──────────────────────────────────────────── */
 .proto-detalles__title-module h2{
-  color: #ffffff;
+  color: var(--heading-color);
   font-size: var(--font-size-heading);
   font-weight: var(--font-weight-heading);
   line-height: 1.15;
@@ -9,7 +9,7 @@
 
 /* Wrapper con border-top */
 .proto-specs {
-  border-top: 1px solid #375CA1;
+  border-top: 1px solid #000104;
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem 2.75rem;
@@ -55,7 +55,7 @@
 }
 
 .proto-specs__label {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-size: var(--font-size-base);
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -63,7 +63,7 @@
 }
 
 .proto-specs__value {
-  color: #ffffff;
+  color: var(--heading-color);
   font-size: 1.375rem;
   font-weight: var(--font-weight-heading);
   line-height: 1.15;

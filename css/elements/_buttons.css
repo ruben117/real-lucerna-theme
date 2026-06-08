@@ -102,9 +102,9 @@ button:focus,
 /* Botón outline secundario – borde y texto blanco sobre fondos oscuros */
 .btn-outline--secondary {
   background-color: transparent;
-  border: 2px solid #ffffff;
+  border: 2px solid #000104;
   border-radius: 6px;
-  color: #ffffff !important;
+  color: #000104 !important;
   display: inline-block;
   font-size: var(--font-size-button);
   font-weight: 600;
@@ -116,8 +116,8 @@ button:focus,
 
 .btn-outline--secondary:hover,
 .btn-outline--secondary:focus {
-  background-color: #ffffff;
-  color: var(--primary-color-black) !important;
+  background-color: #000104;
+  color: #ffffff !important;
   transform: translateY(-2px);
   text-decoration: none;
   font-weight: 600;

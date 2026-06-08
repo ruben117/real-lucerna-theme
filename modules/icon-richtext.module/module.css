@@ -59,13 +59,14 @@
 /* Primera línea: título destacado */
 .icon-rt__content .icon-rt__title {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1;
   margin: 0px 0px 5px;
 }
 
 .icon-rt__content .icon-rt__title strong {
-  color: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: 500;
 }
 
 /* Segunda línea: descripción */

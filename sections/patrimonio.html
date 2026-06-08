@@ -36,13 +36,16 @@
         label="Stat – Familias",
         extra_classes="patrimonio__stat",
         icon={
-          "src": get_asset_url("../images/icon-familia.png"),
+          "src": get_asset_url("../images/icon-familia-patrimonio.svg"),
           "alt": "Ícono familias",
           "loading": "lazy"
         },
         icon_position="left",
         icon_size=40,
         icon_gap=16,
+        styles={
+          "icon_bg_color": { "color": "#000104", "opacity": 100 }
+        },
         content='<p class="icon-rt__title"><strong>65,000</strong> familias</p><p class="icon-rt__desc">Que ya habitan en una comunidad Vinte.</p>'
       %}
       {% end_dnd_module %}
@@ -55,13 +58,16 @@
         label="Stat – Calidad",
         extra_classes="patrimonio__stat",
         icon={
-          "src": get_asset_url("../images/icon-calidad.png"),
+          "src": get_asset_url("../images/icon-calidad-patrimonio.svg"),
           "alt": "Ícono calidad garantizada",
           "loading": "lazy"
         },
         icon_position="left",
         icon_size=40,
         icon_gap=16,
+        styles={
+          "icon_bg_color": { "color": "#000104", "opacity": 100 }
+        },
         content='<p class="icon-rt__title"><strong>Calidad</strong> Garantizada</p><p class="icon-rt__desc">Viviendas diseñadas para aumentar su plusvalía año con año.</p>'
       %}
       {% end_dnd_module %}
@@ -91,7 +97,7 @@
         label="Patrimonio – Infografía",
         extra_classes="patrimonio__infografia-module",
         img={
-          "src": get_asset_url("../images/infografia-construyendo.png"),
+          "src": get_asset_url("../images/infografia-construyendo-patrimonio.png"),
           "alt": "22 años construyendo el patrimonio de México – infografía de plusvalía",
           "loading": "lazy",
           "size_type": "auto"

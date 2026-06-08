@@ -3,7 +3,7 @@
    ============================================================ */
 
 .prototipos__disclaimer-module p {
-  color: rgba(255, 255, 255, 0.55);
+  color: #8B929F;
   font-size: var(--font-size-disclaimer);
   text-align: center;
   margin: 1.5rem 0 2.5rem;
@@ -12,7 +12,7 @@
 /* ── CTA row ─────────────────────────────────────────────── */
 
 .prototipos__cta-heading h2 {
-  color: #ffffff;
+  color: var(--heading-color);
   font-size: clamp(24px, 2.2vw, 38px);
   font-weight: var(--font-weight-heading);
   line-height: 1.2;
@@ -34,15 +34,15 @@
 
 /* Botón primario con color secundario (amarillo) en esta sección */
 .prototipos__cta-actions .btn-primary {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: var(--primary-color-black) !important;
 }
 
 .prototipos__cta-actions .btn-primary:hover,
 .prototipos__cta-actions .btn-primary:focus {
-  background-color: #b8bc20;
-  border-color: #b8bc20;
+  background-color: #ffffff;
+  border-color: #000104;
   color: var(--primary-color-black) !important;
 }
 

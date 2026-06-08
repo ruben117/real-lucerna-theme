@@ -61,7 +61,7 @@
         "name": "icon_bg_color",
         "label": "Color de fondo del ícono",
         "type": "color",
-        "default": { "color": "#375CA1", "opacity": 100 }
+        "default": { "color": "#b48f72", "opacity": 100 }
       },
       {
         "id": "icon_bg_padding",

@@ -20,7 +20,7 @@
           }
         },
         "default": {
-          "color": "#375CA1"
+          "color": "#B48F72"
         }
       },
       {
@@ -39,7 +39,7 @@
           }
         },
         "default": {
-          "color": "#CBD527"
+          "color": "#B48F72"
         }
       }
     ]
@@ -67,7 +67,7 @@
         },
         "default": {
           "fallback": "sans-serif",
-          "font": "Barlow",
+          "font": "Montserrat",
           "font_set": "GOOGLE"
         }
       },
@@ -89,7 +89,7 @@
         },
         "default": {
           "fallback": "serif",
-          "font": "Barlow",
+          "font": "Montserrat",
           "font_set": "GOOGLE"
         }
       }
