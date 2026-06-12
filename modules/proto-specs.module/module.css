@@ -64,9 +64,9 @@
 
 .proto-specs__value {
   color: var(--heading-color);
-  font-size: 1.375rem;
+  font-size: 27px;
   font-weight: var(--font-weight-heading);
-  line-height: 1.15;
+  line-height: 1;
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
