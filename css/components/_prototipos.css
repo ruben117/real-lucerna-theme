@@ -36,14 +36,14 @@
 .prototipos__cta-actions .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-  color: var(--primary-color-black) !important;
+  color: var(--secondary-color) !important;
 }
 
 .prototipos__cta-actions .btn-primary:hover,
 .prototipos__cta-actions .btn-primary:focus {
   background-color: #ffffff;
-  border-color: #000104;
-  color: var(--primary-color-black) !important;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color) !important;
 }
 
 /* ── Responsive ──────────────────────────────────────────── */

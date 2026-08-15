@@ -133,9 +133,9 @@
 .img-slider__arrow {
   align-items: center;
   background-color: transparent;
-  border: 2px solid var(--primary-color-black);
+  border: 2px solid var(--primary-color);
   border-radius: 50% !important;
-  color: var(--primary-color-black);
+  color: var(--secondary-color);
   cursor: pointer;
   display: flex;
   flex-shrink: 0;
@@ -148,10 +148,13 @@
 
 .img-slider__arrow:hover,
 .img-slider__arrow:focus {
-  background-color: var(--primary-color-black);
-  border-color: var(--primary-color-black);
-  color: #ffffff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--secondary-color);
   transform: scale(1.07);
+  svg{
+    stroke:var(--secondary-color);
+  }
 }
 
 .img-slider__arrow:disabled {

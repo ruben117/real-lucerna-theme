@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /* Global */
 :root {
-  --primary-color: #B48F72;
-  --secondary-color: #000104;
+  --primary-color: #F4E73B;
+  --secondary-color: #003B76;
   --primary-color-black: #03091b;
-  --accent-color: #B48F72;
+  --accent-color: #F4E73B;
   --text-color: #000104;
   --heading-color: #000104;
   --legal-color: #8B929F;

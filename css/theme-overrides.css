@@ -480,7 +480,7 @@ tfoot td {
 }
 
 .menu__child-toggle-icon {
-  border-top-color: {{ nav_font_color }};
+  border-top-color: #fff;
 }
 
 .menu .menu__link:hover,

@@ -66,6 +66,10 @@ color: #ffffff;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 0.25rem;
+  .btn-primary{
+    color:var(--secondary-color);
+    font-weight:600;
+  }
 }
 
 /* ── Responsive – Mobile (≤ 767px) ──────────────────────── */
