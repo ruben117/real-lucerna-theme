@@ -55,7 +55,7 @@
 }
 
 .proto-specs__label {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   font-size: var(--font-size-base);
   font-weight: 500;
   letter-spacing: 0.06em;
