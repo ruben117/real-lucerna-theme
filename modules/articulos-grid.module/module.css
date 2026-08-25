@@ -92,7 +92,7 @@
 /* Leer más */
 .art-grid__read-more {
   align-items: center;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   display: inline-flex;
   font-size: 0.875rem;
   font-weight: var(--font-weight-heading);
@@ -103,6 +103,9 @@
 
 .art-grid__read-more:hover {
   gap: 0.6rem;
+  color: var(--secondary-color);
+  transform:scale(1.1);
+  transition: all 0.7s ease;
 }
 
 /* ── Responsive ──────────────────────────────────────────── */

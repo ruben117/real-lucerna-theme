@@ -9,6 +9,7 @@
 {% set bg_color  = module.styles.icon_bg_color.color | default("#B48F72") %}
 {% set bg_pad    = module.styles.icon_bg_padding      | default(14) %}
 {% set bg_radius = module.styles.icon_border_radius   | default(8) %}
+{% set container_radius = module.styles.container_border_radius | default(0) %}
 
 <div
   class="icon-rt icon-rt--{{ pos }}"
@@ -16,6 +17,13 @@
     --icon-rt-size: {{ size }}px;
     --icon-rt-gap: {{ gap }}px;
     --icon-rt-valign: {{ v_align }};
+    {% if module.styles.container_bg_color.color %}
+      background-color: rgba({{ module.styles.container_bg_color.color|convert_rgb }}, {{ module.styles.container_bg_color.opacity / 100 }});
+    {% endif %}
+    {{ module.styles.container_padding.css }}
+    {% if container_radius >= 0 %}
+      border-radius: {{ container_radius }}px;
+    {% endif %}
   "
 >
 

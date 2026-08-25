@@ -52,7 +52,7 @@
   {
     "id": "styles",
     "name": "styles",
-    "label": "Estilos del ícono",
+    "label": "Estilos",
     "type": "group",
     "tab": "STYLE",
     "children": [
@@ -93,6 +93,32 @@
           ["flex-end",   "Abajo"]
         ],
         "default": "flex-start"
+      },
+      {
+        "id": "container_bg_color",
+        "name": "container_bg_color",
+        "label": "Color de fondo del contenedor",
+        "type": "color"
+      },
+      {
+        "id": "container_padding",
+        "name": "container_padding",
+        "label": "Padding del contenedor",
+        "type": "spacing",
+        "visibility": {
+          "hidden_subfields": {
+            "margin": true
+          }
+        }
+      },
+      {
+        "id": "container_border_radius",
+        "name": "container_border_radius",
+        "label": "Radio del borde del contenedor (px)",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "max": 100
       }
     ]
   }
