@@ -87,7 +87,7 @@
 }
 
 .prototipos-grid__m2 {
-  color: #B48F72;
+  color: var(--primary-color);
   font-size: 13px;
   font-weight: 500;
   margin: 0 0 0.75rem;

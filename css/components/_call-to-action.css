@@ -22,7 +22,7 @@
 .call-to-action-section__button .button {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-  color: var(--primary-color-black) !important;
+  color: var(--secondary-color) !important;
   font-weight: var(--font-weight-heading);
 }
 

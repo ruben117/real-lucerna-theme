@@ -89,5 +89,138 @@
     "default": 8,
     "min": 0,
     "max": 24
+  },
+  {
+    "id": "styles",
+    "name": "styles",
+    "label": "Estilos",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "id": "title_styles",
+        "name": "title_styles",
+        "label": "Estilo del título",
+        "type": "group",
+        "children": [
+          {
+            "id": "color",
+            "name": "color",
+            "label": "Color del título",
+            "type": "color"
+          },
+          {
+            "id": "font_weight",
+            "name": "font_weight",
+            "label": "Peso de la fuente del título",
+            "type": "choice",
+            "choices": [
+              ["", "Por defecto"],
+              ["300", "Light (300)"],
+              ["400", "Regular (400)"],
+              ["500", "Medium (500)"],
+              ["600", "Semi-Bold (600)"],
+              ["700", "Bold (700)"],
+              ["800", "Extra-Bold (800)"]
+            ],
+            "default": "",
+            "display": "select"
+          }
+        ]
+      },
+      {
+        "id": "date_styles",
+        "name": "date_styles",
+        "label": "Estilo de la fecha",
+        "type": "group",
+        "children": [
+          {
+            "id": "color",
+            "name": "color",
+            "label": "Color de la fecha",
+            "type": "color"
+          },
+          {
+            "id": "font_weight",
+            "name": "font_weight",
+            "label": "Peso de la fuente de la fecha",
+            "type": "choice",
+            "choices": [
+              ["", "Por defecto"],
+              ["300", "Light (300)"],
+              ["400", "Regular (400)"],
+              ["500", "Medium (500)"],
+              ["600", "Semi-Bold (600)"],
+              ["700", "Bold (700)"],
+              ["800", "Extra-Bold (800)"]
+            ],
+            "default": "",
+            "display": "select"
+          }
+        ]
+      },
+      {
+        "id": "excerpt_styles",
+        "name": "excerpt_styles",
+        "label": "Estilo de la descripción",
+        "type": "group",
+        "children": [
+          {
+            "id": "color",
+            "name": "color",
+            "label": "Color de la descripción",
+            "type": "color"
+          },
+          {
+            "id": "font_weight",
+            "name": "font_weight",
+            "label": "Peso de la fuente de la descripción",
+            "type": "choice",
+            "choices": [
+              ["", "Por defecto"],
+              ["300", "Light (300)"],
+              ["400", "Regular (400)"],
+              ["500", "Medium (500)"],
+              ["600", "Semi-Bold (600)"],
+              ["700", "Bold (700)"],
+              ["800", "Extra-Bold (800)"]
+            ],
+            "default": "",
+            "display": "select"
+          }
+        ]
+      },
+      {
+        "id": "link_styles",
+        "name": "link_styles",
+        "label": "Estilo del enlace (Leer más)",
+        "type": "group",
+        "children": [
+          {
+            "id": "color",
+            "name": "color",
+            "label": "Color del enlace",
+            "type": "color"
+          },
+          {
+            "id": "font_weight",
+            "name": "font_weight",
+            "label": "Peso de la fuente del enlace",
+            "type": "choice",
+            "choices": [
+              ["", "Por defecto"],
+              ["300", "Light (300)"],
+              ["400", "Regular (400)"],
+              ["500", "Medium (500)"],
+              ["600", "Semi-Bold (600)"],
+              ["700", "Bold (700)"],
+              ["800", "Extra-Bold (800)"]
+            ],
+            "default": "",
+            "display": "select"
+          }
+        ]
+      }
+    ]
   }
 ]
