@@ -54,6 +54,9 @@
           {% endif %}
         <h3 class="prototipos-grid__nombre">{{ item.prototipo_nombre | escape_html }}</h3>
       </div>
+        {% if item.prototipo_precio %}
+          <p class="prototipos-grid__precio">{{ item.prototipo_precio | escape_html }}</p>
+        {% endif %}
         <p class="prototipos-grid__m2"> {% if item.is_lockoff == true %} <span style="font-size:22px; font-weigth: light;">Lock-off</span> {% endif %} ({{ item.prototipo_m2 | escape_html }})</p>
       <p class="prototipos-grid__desc">{{ item.prototipo_desc | escape_html }}</p>
     </div>

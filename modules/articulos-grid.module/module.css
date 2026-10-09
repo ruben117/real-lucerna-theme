@@ -74,10 +74,11 @@
   color: var(--heading-color);
   text-decoration: none;
   transition: color 0.2s ease;
+  font-weight: 600;
 }
 
 .art-grid__title a:hover {
-  color: var(--primary-color)!important;
+  color: var(--secondary-color)!important;
 }
 
 /* Extracto */
@@ -104,7 +105,6 @@
 .art-grid__read-more:hover {
   gap: 0.6rem;
   color: var(--secondary-color);
-  transform:scale(1.1);
   transition: all 0.7s ease;
 }
 
